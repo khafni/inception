@@ -38,6 +38,8 @@ services:
       - WordPress:/var/www/html/wordpress
     env_file:
       - ./.env
+    depends_on:
+      - mariadb_container
 
 
 networks:

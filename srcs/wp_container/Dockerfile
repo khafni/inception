@@ -4,8 +4,6 @@ RUN apt update
 RUN apt update
 RUN apt install -y php php-fpm
 RUN mkdir -p /run/php/
-# RUN service php7.3-fpm start
-# ENTRYPOINT ["tail", "-f", "/dev/null"]
 COPY ./www.conf /etc/php/7.3/fpm/pool.d/www.conf 
 RUN service php7.3-fpm start
 RUN service php7.3-fpm stop
@@ -16,5 +14,3 @@ RUN tar -xzvf latest.tar.gz
 WORKDIR "/var/www/html/wordpress"
 COPY ./wp-config.php /var/www/html/wordpress/wp-config.php
 ENTRYPOINT ["php-fpm7.3", "-F", "-R"]
-# ENTRYPOINT ["php-fpm7.3", "--nodaemon<ize", "--fpm-config /etc/php/7.3/fpm/php-fpm.conf"]
-# CMD bash
