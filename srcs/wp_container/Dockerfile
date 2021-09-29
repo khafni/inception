@@ -12,5 +12,6 @@ WORKDIR "/var/www/html"
 RUN wget https://wordpress.org/latest.tar.gz
 RUN tar -xzvf latest.tar.gz
 WORKDIR "/var/www/html/wordpress"
+#RUN cp wp-config-sample.php wp-config.php
 COPY ./wp-config.php /var/www/html/wordpress/wp-config.php
 ENTRYPOINT ["php-fpm7.3", "-F", "-R"]
