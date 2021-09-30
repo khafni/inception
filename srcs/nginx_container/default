@@ -41,10 +41,11 @@ server {
 	#	# With php-fpm (or other unix sockets):	
 	#	# With php-cgi (or other tcp sockets):
 		
-  
-	fastcgi_pass wordpress_container:9000; 
-	fastcgi_param PATH_TRANSLATED $document_root$fastcgi_script_name;
-p
+ 	#include /path/to/fastcgi_params; 
+	fastcgi_pass wordpress_container:9000; 	
+    	fastcgi_param SCRIPT_FILENAME $document_root/$fastcgi_script_name;
+	#fastcgi_param PATH_TRANSLATED $document_root$fastcgi_script_name;
+
 		#fastcgi_pass 127.0.0.1:9000;
 	}
 }

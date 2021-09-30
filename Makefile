@@ -17,3 +17,9 @@ build:
 	docker-compose -f srcs/docker-compose.yml build 
 up:
 	docker-compose -f srcs/docker-compose.yml up -d
+clean:
+	docker-compose -f srcs/docker-compose.yml  down -v
+	docker system prune -a -f
+	docker network prune -f
+	docker volume prune -f
+	docker image prune -f
