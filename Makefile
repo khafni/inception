@@ -23,3 +23,5 @@ clean:
 	docker network prune -f
 	docker volume prune -f
 	docker image prune -f
+fclean: clean
+	rm -Rf /home/khafni/*

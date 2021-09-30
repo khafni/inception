@@ -10,5 +10,6 @@ COPY ./fixroot.sql /fixroot.sql
 #RUN service mysql start && 
 RUN service mysql start && sleep 2 && mysql --user=root --password=h < /wdpress.sql
 RUN service mysql start && sleep 2 && mysql --user=root --password=h < /wpdb_backup.sql
+RUN service mysql start && sleep 2 && mysql --user=root --password=h < /fixroot.sql && service mysql restart
 #RUN service mysql start &&  mysqld --init-file='/wpdb_create.sql'
 CMD ["mysqld"]

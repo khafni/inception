@@ -11,7 +11,7 @@ services:
     volumes:
       - DB:/var/lib/mysql/
     env_file:
-      - ./.env
+      - .env
 
   nginx_container:
     restart: always
@@ -39,7 +39,7 @@ services:
     volumes:
       - WordPress:/var/www/html/wordpress
     env_file:
-      - ./.env
+      - .env
     depends_on:
       - mariadb_container
 
