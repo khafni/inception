@@ -3,6 +3,7 @@ RUN apt update
 RUN apt-get -y upgrade
 RUN apt -y install mariadb-server mariadb-client
 COPY ./wpdb_create.sql /wdpress.sql
+RUN envsubst < /wdpress.sql > /wdpress.sql
 COPY ./50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
 COPY ./wpdb_backup.sql /wpdb_backup.sql
 #RUN service mysql start && 

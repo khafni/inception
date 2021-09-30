@@ -10,6 +10,8 @@ services:
       - main_network
     volumes:
       - DB:/var/lib/mysql/
+    env_file:
+      - ./.env
 
   nginx_container:
     restart: always
