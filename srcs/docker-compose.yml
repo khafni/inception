@@ -2,7 +2,7 @@ version : "3"
 services:
   mariadb_container:
     restart: always
-    build: ./db_container/
+    build: ./requirements/db_container/
     image: mariadb
     ports:
       - 3306:3306
@@ -15,7 +15,7 @@ services:
 
   nginx_container:
     restart: always
-    build: ./nginx_container/
+    build: ./requirements/nginx_container/
     image: nginx
     ports:
       - 443:443
@@ -30,7 +30,7 @@ services:
  
   wordpress_container:
     restart: always
-    build: ./wp_container/
+    build: ./requirements/wp_container/
     image: wordpress
     ports:
       - 9000:9000
