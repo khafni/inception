@@ -1,3 +1,0 @@
-'$TERM'
-$SHELL
-$PWD

@@ -1,3 +1,0 @@
-'screen'
-/bin/bash
-/home/pizza/Desktop/inception/srcs/db_container
